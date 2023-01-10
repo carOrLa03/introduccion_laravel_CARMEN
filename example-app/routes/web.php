@@ -18,10 +18,20 @@ Route::get('/', function () {
 });
 
 Route::get('/mostrar', function () {
-    return view('mostrar-fecha');
+    $titulo = 'Fecha';
+    return view('mostrar-fecha')
+        ->with('titulo', $titulo);
 });
-Route::get('/libros/{titulo?}', function ($titulo) {
-    return view('libros', array(
-        'titulo'=>$titulo
+Route::get('/libros/{titulo?}/{ano?}', function ($titulo = "No has seleccionado ningún libro", $ano = "No has introducido el año") {
+    return view('libros.libros', array(
+        'titulo'=>$titulo,
+        'ano'=>$ano
     ));
+})->where('ano', '[0-9]+');
+Route::get('/listado-libros', function () {
+    $titulo = "Listado de Libros";
+    $libros = ['La sombra del Viento', 'La mujer helada', 'Patria'];
+    return view('libros.listado-libros')
+        ->with('titulo', $titulo)
+        ->with('libros', $libros);
 });
