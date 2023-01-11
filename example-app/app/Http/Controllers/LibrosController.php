@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 class LibrosController extends Controller
 {
     //
-    public function index(){
-        $titulo = "Listado de Libros";
+    public function index($titulo = "Listado de Libros"){
         return view('libros.index',[
-                'titulo'=>$titulo
+                'titulo'=>$titulo,
             ]);
     }
 }

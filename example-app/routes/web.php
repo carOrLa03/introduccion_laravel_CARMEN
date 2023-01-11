@@ -35,4 +35,6 @@ Route::get('/listado-libros', function () {
         ->with('titulo', $titulo)
         ->with('libros', $libros);
 });
-Route::get('/libros', 'LibrosController@index');
+Route::get('/libros/{titulo?}', 'LibrosController@index')
+            ->name('libros.index');
+Route::resource('prueba', 'Prueba_controlador');

@@ -21,6 +21,15 @@
         </style>
     </head>
     <body class="antialiased">
+    <div>
+        <h2>Detalle de Libros</h2>
+        <ul>
+            <li><a href="{{url('/libros')}}">Ir al Index</a></li>
+            <li><a href="{{route('libros.index')}}">Ir al listado</a></li>
+            <li><a href="{{action([App\Http\Controllers\LibrosController::class,'index'])}}">Ir al Index 2</a></li>
+        </ul>
+
+    </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
