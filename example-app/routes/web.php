@@ -37,4 +37,7 @@ Route::get('/listado-libros', function () {
 });
 Route::get('/libros/{titulo?}', 'LibrosController@index')
             ->name('libros.index');
+
+Route::get('/detalles', 'LibrosController@index');
+
 Route::resource('prueba', 'Prueba_controlador');
