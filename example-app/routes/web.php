@@ -45,6 +45,11 @@ Route::get('/detalles/{password?}', 'LibrosController@detalles')
 Route::get('/error', 'LibrosController@error')
     ->name('libros.error');
 
+Route::get('/formulario', 'LibrosController@formulario');
+
+Route::post('/validation', 'LibrosController@validation')
+    ->name('validation.form');
+
 Route::resource('prueba', 'Prueba_controlador');
 
 

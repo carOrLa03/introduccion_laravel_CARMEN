@@ -26,4 +26,11 @@ class LibrosController extends Controller
     public function error(){
         return view('libros.error');
     }
+    public function formulario(){
+        return view('formulario');
+    }
+    public function validation(Request $request){
+            echo 'Nombre:' . $request->input('nombre') . '<br>';
+            echo 'Edad:' .$request->input('edad');
+    }
 }
