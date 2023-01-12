@@ -27,6 +27,7 @@
             <li><a href="{{url('/libros')}}">Ir al Index</a></li>
             <li><a href="{{route('libros.index')}}">Ir al listado</a></li>
             <li><a href="{{action([App\Http\Controllers\LibrosController::class,'index'])}}">Ir al Index 2</a></li>
+            <li><a href="{{url('libros.detalles')}}">Con redirect()</a></li>
         </ul>
 
     </div>

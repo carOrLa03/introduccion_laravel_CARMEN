@@ -38,6 +38,19 @@ Route::get('/listado-libros', function () {
 Route::get('/libros/{titulo?}', 'LibrosController@index')
             ->name('libros.index');
 
-Route::get('/detalles', 'LibrosController@index');
+Route::get('/detalles/{password?}', 'LibrosController@detalles')
+    ->name('libros.detalles')
+    ->middleware('pass');
+
+Route::get('/error', 'LibrosController@error')
+    ->name('libros.error');
 
 Route::resource('prueba', 'Prueba_controlador');
+
+
+
+//Route::get('/libros', 'LibrosController@index')
+//            ->name('libros.index');
+
+//Route::get('/libros/detalles', 'LibrosController@detalles')
+//            ->name('libros.detalles');
