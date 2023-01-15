@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/','welcome');
+
+Route::view('/','welcome')->name('welcome');
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,6 +54,7 @@ Route::post('/validation', 'LibrosController@validation')
     ->name('validation.form');
 
 Route::resource('prueba', 'Prueba_controlador');
+Route::resource('usuario', 'UsuariosControlador');
 
 
 
